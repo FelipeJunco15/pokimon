@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    /* Fondo con brillito animado */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url('https://phantom-marca.unidadeditorial.es/0773be0be916fcedef0d1a7acdd392e7/resize/828/f/jpg/assets/multimedia/imagenes/2024/04/18/17134478892062.jpg');
+      background-size: 110%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 80%);
+      animation: sparkle 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes sparkle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .form-wrapper {
+      margin-left: 5%;
+      backdrop-filter: blur(6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+
+    h1, p {
+      text-shadow: 2px 2px 4px #000;
+      margin: 5px 0;
+    }
+
+    form {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+
+    form p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 12px;
+      border: 1px solid #ffcc00;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input:focus {
+      border: 2px solid #ffaa00;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #ffcc00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover {
+      background-color: #ffaa00;
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .pokeball-icon {
+      width: 22px;
+      height: 22px;
+    }
+  </style>
+  <script src="../js/registrar.js"></script>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h1>BIENVENIDO AL MUNDO POKIMON</h1>
+    <p>Bienvenido a mi primer juego en JavaScript</p>
+
+    <form>
+      <p>Registro</p>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre">
+
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido">
+
+      <label for="email">Email</label>
+      <input type="email" id="email">
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena">
+
+      <button type="button" onclick="Registrar()">
+        <img src="https://img.icons8.com/color/48/000000/pokeball-2.png" class="pokeball-icon" alt="Pokebola">
+        Registrar
+      </button>
+    </form>
+  </div>
+</body>
+</html>
