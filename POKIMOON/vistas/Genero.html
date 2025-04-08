@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokimon Perfil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .logo {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    label {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    select {
+      font-size: 16px;
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Pantalla Selección Sexo -->
+<div class="container" id="sexSelection">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeynfqeriAIx5x2Po5IJakUUTrRyRWf1PnA&s" alt="Logo" class="logo">
+  <h1>Selecciona el Sexo de tu Perfil</h1>
+  <form id="profileForm">
+    <label for="sex">Sexo:</label>
+    <select id="sex" name="sex">
+      <option value="">--Selecciona--</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+    <br>
+    <button type="button" onclick="guardarGenero()">Guardar Selección</button>
+  </form>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function guardarGenero() {
+    const genero = document.getElementById('sex').value;
+    const resultDiv = document.getElementById('result');
+
+    if (genero === '') {
+      resultDiv.textContent = 'Por favor selecciona una opción.';
+      return;
+    }
+
+    resultDiv.textContent = `Has seleccionado: ${genero}`;
+
+    // Después de 1 segundo redirige a Entrenador.html
+    setTimeout(() => {
+      window.location.href = 'Entrenador.html';
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>

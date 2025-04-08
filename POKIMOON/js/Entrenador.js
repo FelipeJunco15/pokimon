@@ -6,7 +6,7 @@ function GetDataUser(){
     
     if(dataUser == null){
         alert('No has iniciado sesion')
-        window.location.href = "../index.html"
+        window.location.href = "../login.html"
     }
     
 }
