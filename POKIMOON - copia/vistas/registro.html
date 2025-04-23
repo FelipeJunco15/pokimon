@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    /* Fondo con imagen y brillito */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url('https://phantom-marca.unidadeditorial.es/0773be0be916fcedef0d1a7acdd392e7/resize/828/f/jpg/assets/multimedia/imagenes/2024/04/18/17134478892062.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 80%);
+      animation: sparkle 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes sparkle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    form {
+      backdrop-filter: none;
+      background: transparent;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      max-width: 320px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1, p {
+      margin: 5px 0;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      text-align: left;
+      color: white;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #fff;
+      font-size: 14px;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: black;
+    }
+
+    input:focus {
+      border-color: #ffaa00;
+      background-color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #ffcc00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover {
+      background-color: #ffaa00;
+      transform: scale(1.05);
+    }
+
+    .pokeball-icon {
+      width: 22px;
+      height: 22px;
+    }
+  </style>
+  <script>
+    function Registrar() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const apellido = document.getElementById("apellido").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const contrasena = document.getElementById("contrasena").value;
+
+      if (!nombre || !apellido || !email || !contrasena) {
+        alert("Por favor, completa todos los campos.");
+        return;
+      }
+
+      const usuario = {
+        nombre,
+        apellido,
+        email,
+        contrasena
+      };
+
+      localStorage.setItem("user", JSON.stringify(usuario));
+      alert("¡Registro exitoso! Ahora puedes iniciar sesión.");
+
+
+      window.location.href = "Login.html";
+    }
+  </script>
+  <script src="../js/registrar.js"></script>
+</head>
+<body>
+  <form>
+    <h1>BIENVENIDO AL MUNDO POKIMON</h1>
+    <p>Bienvenido a mi primer juego en JavaScript</p>
+
+    <p>Registro</p>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre">
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido">
+
+    <label for="email">Email</label>
+    <input type="email" id="email">
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena">
+
+    <button type="button" onclick="Registrar()">
+      <img src="https://img.icons8.com/color/48/000000/pokeball-2.png" class="pokeball-icon" alt="Pokebola">
+      Registrar
+    </button>
+  </form>
+</body>
+</html>

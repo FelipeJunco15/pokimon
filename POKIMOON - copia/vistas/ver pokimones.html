@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Diez Botones con Fondo!</title>
+    <style>
+        body {
+            background-image: url('https://wallpaper.dog/large/20344206.png');
+            background-size: cover; /* Cubre todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita */
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los botones horizontalmente */
+            justify-content: center; /* Centra los botones verticalmente */
+            min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+            margin: 0; /* Elimina márgenes por defecto */
+            color: white; /* Color de texto para que contraste con el fondo */
+        }
+
+        .contenedor-botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Crea una cuadrícula adaptable */
+            gap: 15px; /* Espacio entre los botones */
+            width: 80%; /* Ancho del contenedor de los botones */
+            max-width: 600px; /* Ancho máximo del contenedor */
+            margin-top: 20px; /* Espacio entre el borde superior y los botones */
+        }
+
+        button {
+            background-color: #555; /* Color de fondo de los botones */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+
+        button:hover {
+            background-color: #777; /* Color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Mira estos pokimones!</h1>
+    <div class="contenedor-botones">
+        <button onclick="window.location.href='picachu.html'">picachu</button>
+        <button onclick="window.location.href='charizai.html'">charizai</button>
+        <button onclick="window.location.href='bulbasaur.html'">bulbasaur</button>
+        <button onclick="window.location.href='squirtle.html'">squirtie</button>
+        <button onclick="window.location.href='mewtwo.html'">mewtho</button>
+     
+    </div>
+</body>
+</html>
